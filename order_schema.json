@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Execution Order",
+  "description": "Standardized contract for orders sent from the Execution Engine to the Exchange layer.",
+  "type": "object",
+  "properties": {
+    "internal_order_id": {
+      "type": "string",
+      "description": "Internal tracking ID for the order"
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Unix timestamp in milliseconds"
+    },
+    "symbol": {
+      "type": "string",
+      "description": "Trading pair symbol (e.g., 'BTCUSDT')"
+    },
+    "side": {
+      "type": "string",
+      "enum": ["BUY", "SELL"],
+      "description": "Order side"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["MARKET", "LIMIT", "STOP_LOSS", "TAKE_PROFIT"],
+      "description": "Order type"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Amount to trade (must be pre-calculated and float-removed)"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price for LIMIT/STOP orders"
+    },
+    "reduce_only": {
+      "type": "boolean",
+      "description": "True if this order is strictly for closing a position (Futures)"
+    }
+  },
+  "required": ["internal_order_id", "timestamp", "symbol", "side", "type", "quantity"]
+}

@@ -1,0 +1,10 @@
+yfinance
+vaderSentiment
+feedparser
+requests
+numpy
+pandas
+python-dateutil
+ccxt
+websockets
+

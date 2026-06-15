@@ -1,0 +1,5 @@
+{
+  "name": "pencyl'iam-Shamrock",
+  "description": "The Shamrock model within the pencyl'iam ecosystem: A real-time cryptocurrency dashboard powered by Binance API, featuring price tracking, 24h changes, and interactive charts.",
+  "requestFramePermissions": []
+}
